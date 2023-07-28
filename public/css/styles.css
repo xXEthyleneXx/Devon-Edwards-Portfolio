@@ -10,7 +10,17 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    user-select: none;
+    background-color: #000000;
 }
+
+img {
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    filter: invert(100%);
+}
+
 div.loading {
     width: 100%;
     height: 100vh;
@@ -28,7 +38,7 @@ div.loading {
     }
 div.header {
     position: relative;
-    height: 60px;
+    height: 50px;
     width: 100%;
     background: #303030c0;
     backdrop-filter: blur(4px);
@@ -37,22 +47,18 @@ div.header {
     align-items: center;
 }
     div.header div.option {
+        padding: 5px;
         margin: 0px 10px;
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
     }
         div.header div.option:hover {
-            box-shadow: 0px 0px 1px 1px #ffffff;
+            background: #404040c0;
             border-radius: 5px;
-        }
-        div.header div.option img {
-            height: 45px;
-            width: 45px;
-            object-position: center;
         }
     div.header .grow {
         flex-grow: 1;
@@ -68,14 +74,15 @@ div.navigation {
     align-items: center;
     flex-direction: column;
     border-bottom-left-radius: 5px;
-    transition: width 1s;
+    transition: 0.2s;
     overflow: hidden;
-    top: 60px;
+    top: 50px;
     right: 0px;
     z-index: 99;
 }
     div.navigation div.option {
-        margin: 10px 0px;
+        margin: 5px 0px;
+        padding: 10px 0px;
         width: 190px;
         display: flex;
         justify-content: center;
@@ -159,23 +166,43 @@ div.projects {
             div.projects div.options div.option:hover {
                 box-shadow: 0px 0px 1px 1px #ffffff;
             }
-            div.projects div.option img {
-                height: 90px;
-                width: 90px;
-                object-position: center;
-            }
         div.projects div.options div.text {
             width: 300px;
             height: 0px;
             position: absolute;
             top: 100px;
-            transition: height 1s;
-            transition-timing-function: cubic-bezier(0.7, 0, 0, 0);
+            transition: 0.2s;
             overflow: hidden;
         }
+        div.projects div.options div.icon {
+            height: 80px;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }   
         div.projects div.options div.option:hover > div.text {
             height: 30px;
         }
+
+/* Footer Div */
+div.footer {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    div.footer div.copyright {
+        color: #909090;
+        transition: 0.2s;
+    }
+    div.footer div.copyright:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+/* Google Font Face */
 @font-face {
     font-family: "Barlow";
     src: url("/css/font/Barlow.ttf");
